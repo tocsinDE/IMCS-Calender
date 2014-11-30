@@ -1,0 +1,46 @@
+/*
+Kuler color scheme:
+https://color.adobe.com/28X-Dusty-Petrol-color-theme-119766/
+#292929
+#5B7876
+#8F9E8B
+#F2E6B6
+#412A22
+
+*/
+
+html, body {
+	height: 100%;
+	background-color: #FAF5E1;
+}
+
+#top-nav {
+	margin-top: 20px;
+}
+
+#wrap {
+	min-height: 100%;
+}
+
+.footer {
+	position: relative;
+	margin-top: -60px; /* negative value of footer height */
+	height: 60px;
+	clear:both;
+	padding-top:20px;
+	background-color: #EEE0B8;
+}
+
+#content {
+	overflow:auto;
+	padding-bottom:60px; /* this needs to be bigger than footer height*/
+	background-color: #EEE0B8;
+}
+
+#home-lhs {
+	
+}
+
+#home-rhs {
+	
+}
