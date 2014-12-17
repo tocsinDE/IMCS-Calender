@@ -1,0 +1,4 @@
+[
+    {"name": "test event", "date": {"day": "1", "month": "1", "year": "2014"}, "time": {"hour": "12", "minute": "01"},"category": ["Musik", "Education"], "description": "test event description"},
+    {"name": "test event2", "date": {"day": "12", "month": "11", "year": "2014"}, "time": {"hour": "10", "minute": "31"},"category": ["Fashion", "Culture"], "description": "test event description 2"}
+]
