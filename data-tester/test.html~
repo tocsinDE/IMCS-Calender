@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>test</title>
-    <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./../js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="./json.js"></script>
 
     <script type="text/javascript">
@@ -22,6 +22,7 @@
 					document.write("<br>Name: " + event_data[i].name + 
 		   				"<br>Date: " + event_data[i].date.day + "." + event_data[i].date.month + "." + event_data[i].date.year + 
 		   				"<br>Time: " + event_data[i].time.hour + ":" + event_data[i].time.minute +
+						"<br>Location" + event_data[i].location +
 		   				"<br>Category: " + event_data[i].category[0]);
 					for(var j = 1; j < event_data[i].category.length; ++j)
 						document.write(", " + event_data[i].category[j]);
