@@ -15,9 +15,10 @@
 	
 	
 	<!-- custom css files + google fonts -->
-	<link rel="stylesheet" type="text/css" href="css/custom.css" />
-	   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway" />
-	<title>Dresden 2015 & raquo; Kalender</title>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">-->
+	   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+	<title>Dresden 2015 &raquo; Event</title>
 
 </head>
 <body>
@@ -57,14 +58,13 @@
 		<!-- content area -->
 		<div id="content" class="container-fluid">
 		
-			<div class="row">
-			<!-- sidebar -->
 		
+		
+			<div class="row">
+			
+				<!-- sidebar -->
 				<div class="col-md-3" id="sidebar">
-				
-				<!-- <p class="breadcrumb">Dresden 2015 &raquo; Kalender</p> -->
-					
-					<!-- search -->
+<!-- search -->
 					<form>
 						<h3>Suche</h3>
 						<input id="filter-by-text" type="text" class="form-control" />
@@ -122,64 +122,33 @@
 							
 						</div>
 				</div>
-
-				<!-- calendar area -->
+				
 				<div class="col-md-9">
-				
-				<!-- calendar navigation -->
-				<div class="heading">
-								
-					<button class="btn btn-default pull-left disabled" type="submit">&laquo; vorheriger Monat</button>
-					<button class="btn btn-default pull-right" type="submit">nächster Monat &raquo;</button>
-					<h1 class="text-center">Januar 2015</h1>
-				
+					
+					<!-- heading -->
+					<div class="heading">
+						<h1><small>Konzert</small> 5. Symphoniekonzert der Staatskapelle</h1>
+					</div>
+					
+					<div class="col-md-8">
+					
+					<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+					
+					</div>
+					
+					<div class="col-md-4">
+					
+					<p><img src="img/saechs_staatskapelle.jpg" alt="" title="" class="img-responsive" /></p><p><strong>09.01.15</strong>,  20:00 Uhr<br/>Semperoper (Theaterplatz 2)</p>
+					</div>
+					
+					
+					
+					
+					
 				</div>
-					
-				<!-- actual calendar -->
 				
-				<div class="table-responsive">
-				<table class="table table-striped table-bordered events">
-				
-					<thead>
-						<tr>
-							<th>MO</th><th>DI</th><th>MI</th><th>DO</th><th>FR</th><th>SA</th><th>SO</th>
-						</tr>
-					</thead>
-				
-				<tbody>
-				
-					<tr>
-						<!-- class "empty" hides empty cells (for small resoultions) -->
-						<td class="empty"></td><td class="empty"></td><td class="empty"></td><td>01</td><td>02</td><td>03</td><td>04</td>
-					</tr>
-					
-					<tr>
-						<td>05</td><td>06</td><td>07</td><td>08</td><td>09</td><td>10</td><td>11</td>
-					</tr>
-					
-					<tr>
-						<!-- contains example tooltip -->
-						<td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td class="hasEvents" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<strong>3 Events:</strong><br/>Event1<br/>Event2<br/>Event3" data-container="body">17</td><td>18</td>
-					</tr>
-					
-					<tr>
-						<!-- contains example tooltip -->
-						<td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td class="hasEvents" data-toggle="tooltip" data-placement="bottom" data-html="true"	 title="<strong>2 Events:</strong><br/>Event1<br/>Event2" data-container="body">24</td><td>25</td>
-					</tr>
-					
-					<tr>
-						<td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="empty"></td>
-					</tr>
-				
-				</tbody>
-				
-				</table>
-				</div>
-				</div>
-				</div>
 			</div>
 		</div>
-	</div>
 </div>
 
 <!-- sticky footer area -->
@@ -188,19 +157,5 @@
 		<p class="text-muted"><a href="impressum.html">Impressum</a></p>
 	</div>
 </footer>
-
-<script type="text/javascript">
-	$(function () {
-	
-		// initialize bootstap tooltips (opt-in)
-		$('[data-toggle="tooltip"]').tooltip();
-		
-		$('#filter-by-text').keydown(function () {
-			// filter by text
-		});
-		
-		
-	});
-</script>
 </body>
 </html>
