@@ -7,17 +7,21 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	
 	<!-- javascript files -->
-	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
 	<!-- jquery (local) -->
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
-	
+
+	<!-- self-written functions -->
+	<script type="text/javascript" src="js/calendar/data.js"></script>
+	<script type="text/javascript" src="js/calendar/util.js"></script>
+	<script type="text/javascript" src="js/calendar/json.js"></script>
+	<script type="text/javascript" src="js/calendar/navigation.js"></script>
 	
 	<!-- custom css files + google fonts -->
 	<link rel="stylesheet" type="text/css" href="css/custom.css" />
-	   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway" />
-	<title>Dresden 2015 & raquo; Kalender</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway" />
+	<title>Dresden 2015 Kalender</title>
 
 </head>
 <body>
@@ -61,8 +65,6 @@
 			<!-- sidebar -->
 		
 				<div class="col-md-3" id="sidebar">
-				
-				<!-- <p class="breadcrumb">Dresden 2015 &raquo; Kalender</p> -->
 					
 					<!-- search -->
 					<form>
@@ -131,7 +133,7 @@
 								
 					<button class="btn btn-default pull-left disabled" type="submit">&laquo; vorheriger Monat</button>
 					<button class="btn btn-default pull-right" type="submit">nächster Monat &raquo;</button>
-					<h1 class="text-center">Januar 2015</h1>
+					<h1 class="text-center" id="month-year">Januar 2015</h1>
 				
 				</div>
 					
@@ -147,32 +149,41 @@
 					</thead>
 				
 				<tbody>
-				
-					<tr>
-						<!-- class "empty" hides empty cells (for small resoultions) -->
-						<td class="empty"></td><td class="empty"></td><td class="empty"></td><td>01</td><td>02</td><td>03</td><td>04</td>
-					</tr>
-					
-					<tr>
-						<td>05</td><td>06</td><td>07</td><td>08</td><td>09</td><td>10</td><td>11</td>
-					</tr>
-					
-					<tr>
-						<!-- contains example tooltip -->
-						<td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td class="hasEvents" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<strong>3 Events:</strong><br/>Event1<br/>Event2<br/>Event3" data-container="body">17</td><td>18</td>
-					</tr>
-					
-					<tr>
-						<!-- contains example tooltip -->
-						<td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td class="hasEvents" data-toggle="tooltip" data-placement="bottom" data-html="true"	 title="<strong>2 Events:</strong><br/>Event1<br/>Event2" data-container="body">24</td><td>25</td>
-					</tr>
-					
-					<tr>
-						<td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="empty"></td>
-					</tr>
-				
+					<script type="text/javascript">
+						var current_page = document.getElementById("month-year").innerHTML;
+						var year_month = getCurCalPageFromString(current_page);
+						var cur_month = year_month[0];
+						var cur_year = year_month[1];
+						var date = 0;
+						var offset = 0;
+						for(var week = 0; week < getWeeks(cur_month, cur_year); ++week)
+						{
+							document.write("<tr>");
+							for(var day = 0; day < 7; ++day)
+							{
+								while(offset < getDayOffset(cur_month, cur_year))
+								{
+									document.write("<td class=\"empty\"></td>");
+									++day;
+									++offset;
+								}
+								if(date + 1 > getDays(cur_month, cur_year))
+								{
+									document.write("<td class=\"empty\"></td>");
+								}
+								else
+								{
+									var date_info = getEventByDate(++date, cur_month, cur_year);
+									if(date_info == "")
+										document.write("<td>" + date + "</td>");
+									else
+										document.write("<td class=\"hasEvents\" data-toggle=\"tooltip\" data-placement=\"bottom\" data-html=\"true\" data-container=\"body\" title=\"<strong>" + date_info + "</strong>\">" + date + "</td>");
+								}
+							}
+							document.write("</tr>");
+						}
+					</script>
 				</tbody>
-				
 				</table>
 				</div>
 				</div>
