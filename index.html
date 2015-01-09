@@ -170,12 +170,7 @@
 	$(function () {
 	
 		// initialize bootstap tooltips (opt-in)
-		$('[data-toggle="tooltip"]').tooltip();
-		
-		$('#filter-by-text').keydown(function () {
-			// filter by text
-		});
-		
+		$("body").tooltip({ selector: '[data-toggle=tooltip]' });
 		
 	});
 </script>
