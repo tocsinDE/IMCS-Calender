@@ -24,7 +24,7 @@ function getCurCalPageFromString(head)
 	var i = 0;
 	while(month_name != month_names[i] && i < 12)
 		++i;
+	result[1] = head.split(" ")[1];
 	result[0] = i;
-	result[1] = current_page.split(" ")[1];
 	return result;
 }
