@@ -2,7 +2,7 @@ var data = [
     {"name": "test event", "date": {"day": "1", "month": "0", "year": "2015"}, "time": {"hour": "12", "minute": "01"}, "location": "nowhere", "category": ["Musik", "Education"], "description": "test event description"},
     {"name": "Summoning Satan", "date": {"day": "13", "month": "0", "year": "2015"}, "time": {"hour": "24", "minute": "00"}, "location": "nowhere", "category": ["Musik", "Education", "Witchcraft"], "description": "test event 3 description"},
     {"name": "test event2", "date": {"day": "12", "month": "11", "year": "2014"}, "time": {"hour": "10", "minute": "31"}, "location": "somewhere", "category": ["Fashion", "Culture"], "description": "test event description 2"},
-    {"name": "La Bohème", "date": {"day": "4", "month": "0", "year": "2015"}, "time": {"hour": "14", "minute": "30"}, "location": "Semperoper", "category": ["Oper"], "description": "Oper von Giacomo Puccini"},
+    {"name": "La Bohème", "date": {"day": "23", "month": "0", "year": "2015"}, "time": {"hour": "14", "minute": "30"}, "location": "Semperoper", "category": ["Oper"], "description": "Oper von Giacomo Puccini"},
     {"name": "Die Zauberflöte", "date": {"day": "18", "month": "0", "year": "2015"}, "time": {"hour": "19", "minute": "00"}, "location": "Semperoper", "category": ["Oper"], "description": "Oper von Wolfgang Amadeus Mozart"},
     {"name": "5. Symphoniekonzert der Staatskapelle Dresden", "date": {"day": "10", "month": "0", "year": "2015"}, "time": {"hour": "20", "minute": "00"}, "location": "Semperoper", "category": ["Konzert"], "description": ""},
     {"name": "Pohlmann", "date": {"day": "29", "month": "0", "year": "2015"}, "time": {"hour": "21", "minute": "00"}, "location": "Scheune", "category": ["Konzert"], "description": "" },

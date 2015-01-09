@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="utf-8"/>
+	<!-- basic bootstrap css files -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+	
+	<!-- javascript files -->
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+
+	<!-- jquery (local) -->
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	
+	
+	<!-- custom css files + google fonts -->
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">-->
+	   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway">
+	<title>Dresden 2015 &raquo; La Bohème</title>
+
+</head>
+<body>
+
+<div id="wrap">
+<div class="calendar-masthead">
+	<div class="container">
+		<!-- top navigation area -->
+		
+		<nav role="navigation" id="top-nav" class="navbar navbar-default">
+			<!-- logo and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" data-target="#navbarCollapse"
+						data-toggle="collapse" class="navbar-toggle">
+
+					<span class="sr-only">Navigation anzeigen</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+
+				</button>
+				<a href="index.html" class="navbar-brand">Dresden 2015</a>
+			</div>
+
+			<!-- actual nav links -->
+			<div id="navbarCollapse" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="#">Kalender</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		<header></header>
+		
+		<!-- content area -->
+		<div id="content" class="container-fluid">
+		
+		
+		
+			<div class="row">
+			
+				<!-- sidebar -->
+				<div class="col-md-3" id="sidebar">
+<!-- search -->
+					<form>
+						<h3>Suche</h3>
+						<input id="filter-by-text" type="text" class="form-control" />
+					</form>
+					
+					<!-- filter -->
+					<div class="categories">
+					<h3>Kategorien</h3>
+					
+					<!-- make 'em toggable -->
+					<div data-toggle="collapse" data-target=".kultur-collapse">Kultur <span class="caret"></span></div>
+							<ul id="kultur" class="kultur-collapse collapse list-unstyled">
+								<li><label><input type="checkbox" id="kultur-lesung" /> Lesung</label></li>
+								<li><label><input type="checkbox" id="kultur-museum" /> Museum</label></li>
+								<li><label><input type="checkbox" id="kultur-oper" /> Oper</label></li>
+								<li><label><input type="checkbox" id="kultur-theater" /> Theater</label></li>
+								<li><label><input type="checkbox" id="kultur-ballett" /> Ballett</label></li>
+								<li><label><input type="checkbox" id="kultur-musical" /> Musical</label></li>
+							</ul>
+						
+						<div data-toggle="collapse" data-target=".bildung-collapse">Bildung <span class="caret"></span></div>
+							<ul id="bildung" class="bildung-collapse collapse list-unstyled">
+								<li><label><input type="checkbox" id="bildung-workshop" /> Workshop</label></li>
+								<li><label><input type="checkbox" id="bildung-lesung" /> Lesung</label></li>
+								<li><label><input type="checkbox" id="bildung-vortrag" /> Vortrag</label></li>
+								<li><label><input type="checkbox" id="bildung-museum" /> Museum</label></li>
+							</ul>
+						
+						<div data-toggle="collapse" data-target=".sport-collapse">Sport <span class="caret"></span></div>
+							<ul id="sport" class="sport-collapse collapse list-unstyled">
+								<li><label><input type="checkbox" id="sport-marathon" /> Marathon</label></li>
+								<li><label><input type="checkbox" id="sport-fussball" /> Fußball</label></li>
+								<li><label><input type="checkbox" id="sport-basketball" /> Basketball</label></li>
+								<li><label><input type="checkbox" id="sport-eishockey" /> Eishockey</label></li>
+							</ul>
+						
+						<div data-toggle="collapse" data-target=".social-events-collapse">Social Events <span class="caret"></span></div>
+							<ul id="social-events" class="social-events-collapse collapse list-unstyled">
+								<li><label><input type="checkbox" id="social-events-demonstration" /> Demonstration</label></li>
+								<li><label><input type="checkbox" id="social-events-gala-ball" /> Gala/Ball</label></li>
+								<li><label><input type="checkbox" id="social-events-comedy" /> Comedy</label></li>
+								<li><label><input type="checkbox" id="social-events-party" /> Party</label></li>
+								<li><label><input type="checkbox" id="social-events-festumzug" /> Festumzug</label></li>
+								<li><label><input type="checkbox" id="social-events-weihnachtsmarkt" /> Weihnachtsmarkt</label></li>
+							</ul>
+						
+						<div data-toggle="collapse" data-target=".freizeit-collapse">Freizeit <span class="caret"></span></div>
+							<ul id="freizeit" class="freizeit-collapse collapse list-unstyled">
+								<li><label><input type="checkbox" id="freizeit-festival" /> Festival</label></li>
+								<li><label><input type="checkbox" id="freizeit-konzert" /> Konzert</label></li>
+								<li><label><input type="checkbox" id="freizeit-kino" /> Kino</label></li>
+								<li><label><input type="checkbox" id="freizeit-musical" /> Musical</label></li>
+								<li><label><input type="checkbox" id="freizeit-shows" /> Shows</label></li>
+							</ul>
+							
+						</div>
+				</div>
+				
+				<div class="col-md-9">
+					
+					<!-- heading -->
+					<div class="heading">
+						<h1><small>Oper</small> La Bohème</h1>
+					</div>
+					
+					<div class="col-md-8">
+					
+					<p>Szenen aus "La vie de bohème"(Henri Murger) in vier Bildern von Giacomo Puccini in italienischer Sprache</p>
+					
+					</div>
+					
+					<div class="col-md-4">
+					
+					<p><img src="img/saechs_staatskapelle.jpg" alt="" title="" class="img-responsive" /></p><p><strong>23.01.15</strong>,  19:00 Uhr<br/>Semperoper (Theaterplatz 2)</p>
+					</div>
+					
+					
+					
+					
+					
+				</div>
+				
+			</div>
+		</div>
+</div>
+
+<!-- sticky footer area -->
+<footer class="footer">
+	<div class="container">
+		<p class="text-muted"><a href="impressum.html">Impressum</a></p>
+	</div>
+</footer>
+</body>
+</html>
