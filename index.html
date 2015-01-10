@@ -6,11 +6,19 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
 	
-	<!-- javascript files -->
+	<!-- datepicker css -->
+	<link rel="stylesheet" type="text/css" href="css/datepicker3.css">
 
-	<!-- jquery (local) -->
+	<!-- javascript files -->
+	
+	<!-- jquery -->
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="http://momentjs.com/downloads/moment.js"></script>
+	
+	<!-- datepicker -->
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.de.js"></script>
 
 	<!-- self-written functions -->
 	<script type="text/javascript" src="js/calendar/data.js"></script>
@@ -21,7 +29,7 @@
 	<!-- custom css files + google fonts -->
 	<link rel="stylesheet" type="text/css" href="css/custom.css" />
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Raleway" />
-	<title>Dresden 2015 Kalender</title>
+	<title>Dresden 2015 &raquo; Kalender</title>
 
 </head>
 <body onload="init();">
@@ -49,9 +57,12 @@
 			<!-- actual nav links -->
 			<div id="navbarCollapse" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="index.html">Home</a></li>
-					<li><a href="#">Kalender</a></li>
+					<li class="active"><a href="index.html">Kalender</a></li>
 					<li><a href="about.html">About</a></li>
+				</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="">Impressum</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -67,10 +78,8 @@
 				<div class="col-md-3" id="sidebar">
 					
 					<!-- search -->
-					<form>
-						<h3>Suche</h3>
-						<input id="filter-by-text" type="text" class="form-control" />
-					</form>
+						<h3>Nach Tag filtern</h3>
+						<input id="filter-by-date" type="text" class="form-control" />
 					
 					<!-- filter -->
 					<div class="categories">
@@ -79,47 +88,47 @@
 					<!-- make 'em toggable -->
 					<div data-toggle="collapse" data-target=".kultur-collapse">Kultur <span class="caret"></span></div>
 							<ul id="kultur" class="kultur-collapse collapse list-unstyled">
-								<li><label><input type="checkbox" id="kultur-lesung" /> Lesung</label></li>
-								<li><label><input type="checkbox" id="kultur-museum" /> Museum</label></li>
-								<li><label><input type="checkbox" id="kultur-oper" /> Oper</label></li>
-								<li><label><input type="checkbox" id="kultur-theater" /> Theater</label></li>
-								<li><label><input type="checkbox" id="kultur-ballett" /> Ballett</label></li>
-								<li><label><input type="checkbox" id="kultur-musical" /> Musical</label></li>
+								<li><label><input type="checkbox" id="kultur-lesung" checked="checked" /> Lesung</label></li>
+								<li><label><input type="checkbox" id="kultur-museum" checked="checked" /> Museum</label></li>
+								<li><label><input type="checkbox" id="kultur-oper" checked="checked" /> Oper</label></li>
+								<li><label><input type="checkbox" id="kultur-theater" checked="checked" /> Theater</label></li>
+								<li><label><input type="checkbox" id="kultur-ballett" checked="checked" /> Ballett</label></li>
+								<li><label><input type="checkbox" id="kultur-musical" checked="checked" /> Musical</label></li>
 							</ul>
 						
 						<div data-toggle="collapse" data-target=".bildung-collapse">Bildung <span class="caret"></span></div>
 							<ul id="bildung" class="bildung-collapse collapse list-unstyled">
-								<li><label><input type="checkbox" id="bildung-workshop" /> Workshop</label></li>
-								<li><label><input type="checkbox" id="bildung-lesung" /> Lesung</label></li>
-								<li><label><input type="checkbox" id="bildung-vortrag" /> Vortrag</label></li>
-								<li><label><input type="checkbox" id="bildung-museum" /> Museum</label></li>
+								<li><label><input type="checkbox" id="bildung-workshop" checked="checked" /> Workshop</label></li>
+								<li><label><input type="checkbox" id="bildung-lesung" checked="checked" /> Lesung</label></li>
+								<li><label><input type="checkbox" id="bildung-vortrag" checked="checked" /> Vortrag</label></li>
+								<li><label><input type="checkbox" id="bildung-museum" checked="checked" /> Museum</label></li>
 							</ul>
 						
 						<div data-toggle="collapse" data-target=".sport-collapse">Sport <span class="caret"></span></div>
 							<ul id="sport" class="sport-collapse collapse list-unstyled">
-								<li><label><input type="checkbox" id="sport-marathon" /> Marathon</label></li>
-								<li><label><input type="checkbox" id="sport-fussball" /> Fußball</label></li>
-								<li><label><input type="checkbox" id="sport-basketball" /> Basketball</label></li>
-								<li><label><input type="checkbox" id="sport-eishockey" /> Eishockey</label></li>
+								<li><label><input type="checkbox" id="sport-marathon" checked="checked" /> Marathon</label></li>
+								<li><label><input type="checkbox" id="sport-fussball" checked="checked" /> Fußball</label></li>
+								<li><label><input type="checkbox" id="sport-basketball" checked="checked" /> Basketball</label></li>
+								<li><label><input type="checkbox" id="sport-eishockey" checked="checked" /> Eishockey</label></li>
 							</ul>
 						
 						<div data-toggle="collapse" data-target=".social-events-collapse">Social Events <span class="caret"></span></div>
 							<ul id="social-events" class="social-events-collapse collapse list-unstyled">
-								<li><label><input type="checkbox" id="social-events-demonstration" /> Demonstration</label></li>
-								<li><label><input type="checkbox" id="social-events-gala-ball" /> Gala/Ball</label></li>
-								<li><label><input type="checkbox" id="social-events-comedy" /> Comedy</label></li>
-								<li><label><input type="checkbox" id="social-events-party" /> Party</label></li>
-								<li><label><input type="checkbox" id="social-events-festumzug" /> Festumzug</label></li>
-								<li><label><input type="checkbox" id="social-events-weihnachtsmarkt" /> Weihnachtsmarkt</label></li>
+								<li><label><input type="checkbox" id="social-events-demonstration" checked="checked" /> Demonstration</label></li>
+								<li><label><input type="checkbox" id="social-events-gala-ball" checked="checked" /> Gala/Ball</label></li>
+								<li><label><input type="checkbox" id="social-events-comedy" checked="checked" /> Comedy</label></li>
+								<li><label><input type="checkbox" id="social-events-party" checked="checked" /> Party</label></li>
+								<li><label><input type="checkbox" id="social-events-festumzug" checked="checked" /> Festumzug</label></li>
+								<li><label><input type="checkbox" id="social-events-weihnachtsmarkt" checked="checked" /> Weihnachtsmarkt</label></li>
 							</ul>
 						
 						<div data-toggle="collapse" data-target=".freizeit-collapse">Freizeit <span class="caret"></span></div>
 							<ul id="freizeit" class="freizeit-collapse collapse list-unstyled">
-								<li><label><input type="checkbox" id="freizeit-festival" /> Festival</label></li>
-								<li><label><input type="checkbox" id="freizeit-konzert" /> Konzert</label></li>
-								<li><label><input type="checkbox" id="freizeit-kino" /> Kino</label></li>
-								<li><label><input type="checkbox" id="freizeit-musical" /> Musical</label></li>
-								<li><label><input type="checkbox" id="freizeit-shows" /> Shows</label></li>
+								<li><label><input type="checkbox" id="freizeit-festival" checked="checked" /> Festival</label></li>
+								<li><label><input type="checkbox" id="freizeit-konzert" checked="checked" /> Konzert</label></li>
+								<li><label><input type="checkbox" id="freizeit-kino" checked="checked" /> Kino</label></li>
+								<li><label><input type="checkbox" id="freizeit-musical" checked="checked" /> Musical</label></li>
+								<li><label><input type="checkbox" id="freizeit-shows" checked="checked" /> Shows</label></li>
 							</ul>
 							
 						</div>
@@ -159,19 +168,29 @@
 	</div>
 </div>
 
-<!-- sticky footer area -->
+<!-- sticky footer area 
 <footer class="footer">
 	<div class="container">
 		<p class="text-muted"><a href="impressum.html">Impressum</a></p>
 	</div>
-</footer>
+</footer> -->
 
 <script type="text/javascript">
 	$(function () {
-	
-		// initialize bootstap tooltips (opt-in)
-		$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+		$("body").tooltip({ selector: '.hasEvents', container: 'body', html: true, placement: 'bottom' });
 		
+		$('#filter-by-date').datepicker({format: 'd.m.yyyy', todayHighlight: true, language: 'de'}).on("changeDate", function(e){
+			var selected_day = e.format(e.dates, "d");
+			var selected_month = e.format(e.dates, "mm");
+			var selected_year = e.format(e.dates, "yyyy");
+			
+			var selected_date="#modal-" + selected_day + "-" + --selected_month + "-" + selected_year;
+			
+			var content=getDataByDate(selected_day, selected_month, selected_year);
+			if(content!="") $("table").append(content);
+			
+			$(selected_date).modal('show');
+		});
 	});
 </script>
 </body>
