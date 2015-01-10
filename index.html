@@ -179,15 +179,14 @@
 	$(function () {
 		$("body").tooltip({ selector: '.hasEvents', container: 'body', html: true, placement: 'bottom' });
 		
-		$('#filter-by-date').datepicker({format: 'd.m.yyyy', todayHighlight: true, language: 'de'}).on("changeDate", function(e){
-			var selected_day = e.format(e.dates, "d");
-			var selected_month = e.format(e.dates, "mm");
-			var selected_year = e.format(e.dates, "yyyy");
+		$('#filter-by-date').datepicker({format: 'd.m.yyyy', todayHighlight: true, language: 'de'}).on("changeDate", function(selected){
+			var selected_day = selected.format(selected.dates, "d");
+			var selected_month = selected.format(e.dates, "mm");
+			var selected_year = selected.format(e.dates, "yyyy");
 			
 			var selected_date="#modal-" + selected_day + "-" + --selected_month + "-" + selected_year;
 			
-			var content=getDataByDate(selected_day, selected_month, selected_year);
-			if(content!="") $("table").append(content);
+			$("table").append(getDataByDate(selected_day, selected_month, selected_year));
 			
 			$(selected_date).modal('show');
 		});
