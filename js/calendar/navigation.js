@@ -60,12 +60,12 @@ function drawTable()
 			}
 			else
 			{
-				var date_info = getEventByDate(++date, cur_month, cur_year);
+				var date_info = getEventByDate(++date, cur_month, cur_year, getCategories());
 				if(date_info == "")
 					table_data += "<td>" + date + "</td>";
 				else {
 					table_data += "<td class=\"hasEvents\" data-toggle=\"modal\" data-target=\"#modal-" + date + "-" + year_month[0] + "-" + year_month[1] + "\" title=\"" + date_info + "\">" + date + "</td>" ;
-					table_data += getDataByDate(date, cur_month, cur_year);
+					table_data += getDataByDate(date, cur_month, cur_year, getCategories());
 				}
 			}
 		}
