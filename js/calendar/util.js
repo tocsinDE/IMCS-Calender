@@ -71,10 +71,3 @@ function compareArrayElements(c1, c2)
 	}
 	return false;
 }
-/*
-todo:
-	- daten eintragen
-	- copyright???
-	- impressum!!!
-	- auf webspace laden
-*/

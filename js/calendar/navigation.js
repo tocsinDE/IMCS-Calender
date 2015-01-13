@@ -64,7 +64,7 @@ function drawTable()
 				if(date_info == "")
 					table_data += "<td>" + date + "</td>";
 				else {
-					table_data += "<td class=\"hasEvents\" data-toggle=\"modal\" data-target=\"#modal-" + date + "-" + year_month[0] + "-" + year_month[1] + "\" title=\"" + date_info + "\">" + date + "</td>" ;
+					table_data += "<td class=\"hasEvents\" data-toggle=\"modal\" data-target=\"#modal-" + date + "-" + year_month[0] + "-" + year_month[1] + "-" + false + "\" title=\"" + date_info + "\">" + date + "</td>" ;
 					table_data += getDataByDate(date, cur_month, cur_year, false);
 				}
 			}
