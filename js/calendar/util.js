@@ -73,8 +73,6 @@ function compareArrayElements(c1, c2)
 }
 /*
 todo:
-	- category bei geteventbydate
-	- leerzeichen manuell einfügen
 	- daten eintragen
 	- copyright???
 	- impressum!!!

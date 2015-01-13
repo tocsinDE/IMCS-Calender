@@ -65,7 +65,7 @@ function drawTable()
 					table_data += "<td>" + date + "</td>";
 				else {
 					table_data += "<td class=\"hasEvents\" data-toggle=\"modal\" data-target=\"#modal-" + date + "-" + year_month[0] + "-" + year_month[1] + "\" title=\"" + date_info + "\">" + date + "</td>" ;
-					table_data += getDataByDate(date, cur_month, cur_year, getCategories());
+					table_data += getDataByDate(date, cur_month, cur_year, false);
 				}
 			}
 		}
@@ -73,8 +73,17 @@ function drawTable()
 	}
 	document.getElementById("calendar").innerHTML = table_data;
 }
+function initData()
+{
+	for(var i = 0; i < data.length; ++i)
+	{
+		for(var j = 0; j < data[i]["category"].length; ++j)
+			data[i]["category"][j] = " " + data[i]["category"][j];
+	}
+}
 function init()
 {
 	getCurrentMonth();
+	initData();
 	drawTable();
 }
