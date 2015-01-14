@@ -24,12 +24,12 @@ function getDataByDate(day, month, year, all_categories)
 		{
 			if(all_categories && compareArrayElements(data[i]["category"], getAllCategories()))
 			{
-				result +="<p data-toggle=\"collapse\" data-target=\"." + i + "-collapse\"><small>[" + data[i]["category"] + "</small>] <strong>" + data[i]["name"] + "</strong><span class=\"caret\"></span></p><div class=\"collapse " + i + "-collapse\"><p>" + data[i]["time"]["hour"] + ":" + data[i]["time"]["minute"] + " Uhr, " + data[i]["location"] + "<p>" + data[i]["description"] + "</p></div>";
+				result +="<p data-toggle=\"collapse\" data-target=\"." + i + "-collapse\"><small>["+ data[i]["category"] + "]</small> <strong>" + data[i]["name"] + "</strong><span class=\"caret\"></span></p><div class=\"collapse " + i + "-collapse\"><p>" + data[i]["time"]["hour"] + ":" + data[i]["time"]["minute"] + " Uhr, " + data[i]["location"] + "<p>" + data[i]["description"] + "</p></div>";
 				var hasEvents=1;
 			}
 			else if(compareArrayElements(data[i]["category"], getCategories()))
 			{
-				result +="<p data-toggle=\"collapse\" data-target=\"." + i + "-collapse\"><small>[" + data[i]["category"] + "</small>] <strong>" + data[i]["name"] + "</strong><span class=\"caret\"></span></p><div class=\"collapse " + i + "-collapse\"><p>" + data[i]["time"]["hour"] + ":" + data[i]["time"]["minute"] + " Uhr, " + data[i]["location"] + "<p>" + data[i]["description"] + "</p></div>";
+				result +="<p data-toggle=\"collapse\" data-target=\"." + i + "-collapse\"><small>["+ data[i]["category"] + "]</small> <strong>" + data[i]["name"] + "</strong><span class=\"caret\"></span></p><div class=\"collapse " + i + "-collapse\"><p>" + data[i]["time"]["hour"] + ":" + data[i]["time"]["minute"] + " Uhr, " + data[i]["location"] + "<p>" + data[i]["description"] + "</p></div>";
 				var hasEvents=1;
 			}
 		}
