@@ -186,7 +186,7 @@
 			
 			var selected_date="#modal-" + selected_day + "-" + --selected_month + "-" + selected_year + "-" + true;
 			
-			if(selected_day.length>1 && selected.format(selected.dates, "mm").length>0 && selected_year.length==4) {
+			if(selected_day.length>=1 && selected.format(selected.dates, "mm").length>=1 && selected_year.length==4) {
 				$("table").append(getDataByDate(selected_day, selected_month, selected_year, true));
 				$(selected_date).modal('show');
 			}
