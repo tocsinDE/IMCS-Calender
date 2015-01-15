@@ -79,7 +79,7 @@
 					
 					<!-- search -->
 						<h3>Nach Tag filtern</h3>
-						<input id="filter-by-date" type="text" class="form-control" />
+						<input id="filter-by-date" type="text" class="form-control" title="Akzeptiert wird das Format d.m.yyyy" />
 					
 					<!-- filter -->
 					<div class="categories">
@@ -172,16 +172,24 @@
 	$(function () {
 		$("body").tooltip({ selector: '.hasEvents', container: 'body', html: true, placement: 'bottom' });
 		
+		var today = new Date();
+		var month = new Array(1,2,3,4,5,6,7,8,9,10,11,12);
+		
+		var today_output=(today.getDate() + "." + month[today.getMonth()] + "." + today.getFullYear());
+		$('#filter-by-date').val(today_output);
+		
 		$('#filter-by-date').datepicker({format: 'd.m.yyyy', todayHighlight: true, language: 'de'}).on("changeDate", function(selected){
 			var selected_day = selected.format(selected.dates, "d");
 			var selected_month = selected.format(selected.dates, "mm");
 			var selected_year = selected.format(selected.dates, "yyyy");
 			
-			var selected_date="#modal-" + selected_day + "-" + --selected_month + "-" + selected_year + "-" + true;
-
-			$("table").append(getDataByDate(selected_day, selected_month, selected_year, true));
 			
-			$(selected_date).modal('show');
+			var selected_date="#modal-" + selected_day + "-" + --selected_month + "-" + selected_year + "-" + true;
+			
+			if(selected_day.length>1 && selected.format(selected.dates, "mm").length>0 && selected_year.length==4) {
+				$("table").append(getDataByDate(selected_day, selected_month, selected_year, true));
+				$(selected_date).modal('show');
+			}
 		});
 	});
 </script>
