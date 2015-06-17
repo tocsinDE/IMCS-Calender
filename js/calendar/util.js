@@ -28,3 +28,46 @@ function getCurCalPageFromString(head)
 	result[0] = i;
 	return result;
 }
+function getCategories()
+{
+	var elements = document.getElementsByTagName("label");
+	var categories = new Array();
+	for(var i = 0; i < elements.length; ++i)
+	{
+		var checkbox = elements[i].getElementsByTagName("input")[0];
+		if(checkbox.getAttribute("type") == "checkbox")
+		{
+			if(checkbox.checked)
+			{
+				categories.push(elements[i].textContent);
+			}
+		}
+	}
+	return categories;
+}
+function getAllCategories()
+{
+	var elements = document.getElementsByTagName("label");
+	var categories = new Array();
+	for(var i = 0; i < elements.length; ++i)
+	{
+		var checkbox = elements[i].getElementsByTagName("input")[0];
+		if(checkbox.getAttribute("type") == "checkbox")
+		{
+			categories.push(elements[i].textContent);
+		}
+	}
+	return categories;
+}
+function compareArrayElements(c1, c2)
+{
+	for(var i = 0; i < c1.length; ++i)
+	{
+		for(var j = 0; j < c2.length; ++j)
+		{
+			if(c1[i] == c2[j])
+				return true;
+		}
+	}
+	return false;
+}
